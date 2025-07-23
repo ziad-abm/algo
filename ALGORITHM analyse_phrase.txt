@@ -1,0 +1,32 @@
+ALGORITHM analyse_phrase
+VAR
+car : CHAR;
+nbCaracteres : INTEGER := 0;
+nbMots : INTEGER := 1;
+nbVoyelles : INTEGER := 0;
+
+BEGIN
+
+   Write("Entrez une phrase qui se termine par un point :");
+   
+   DO
+      READ(car)
+      
+      nbCaracteres := nbCaracteres + 1
+
+      IF car = 'a' OR car = 'e' OR car = 'i' OR car = 'o' OR car = 'u' OR
+         car = 'A' OR car = 'E' OR car = 'I' OR car = 'O' OR car = 'U' THEN
+         nbVoyelles := nbVoyelles + 1
+      END_IF
+
+      IF car = ' ' THEN
+         nbMots := nbMots + 1
+      END_IF
+
+   WHILE car ≠ '.'
+
+   Write("Nombre de caractères : ", nbCaracteres)
+   Write("Nombre de mots : ", nbMots)
+   Write("Nombre de voyelles : ", nbVoyelles)
+
+END
